@@ -1,0 +1,18 @@
+{
+  "version": "0.0.0",
+  "name": "JGraph-Demo",
+  "description": "It is sample demo on JGraph",
+  "repository": "https://github.com/AyolaJayamaha/jgraph-demo",
+  "author": "Ayola",
+  "devDependencies": { 
+	"http-server": "^0.6.1"
+  },  
+  "dependencies": {
+    "jquery": "^1.9.1",
+	"bootstrap": "^3.3.0"
+  },
+  "scripts": {
+	"prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  }
+}

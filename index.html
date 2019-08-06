@@ -1,0 +1,137 @@
+<!DOCTYPE>
+
+<html>
+
+	<head>
+		<title>cytoscape-avsdf.js demo</title>
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+		<script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+		<!--polyfills are needed for this extension for old browsers like IE -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.7/shim.min.js"></script>
+
+		<script src="https://unpkg.com/layout-base/layout-base.js"></script>
+		<script src="https://unpkg.com/avsdf-base/avsdf-base.js"></script>
+		<script src="js/cytoscape-avsdf.js"></script>
+
+		<style>
+			#cy {
+				height: 80%;
+			}
+		</style>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function(){
+
+				var cy = window.cy = cytoscape({
+					container: document.getElementById('cy'),
+
+					layout: {
+						name: 'avsdf',
+						nodeSeparation: 120
+					},
+
+					style: [
+							{
+								selector: 'node',
+								style: {
+									'label': 'data(id)',
+									'text-valign': 'center',
+									'color': 'white',
+									'background-color': 'black'
+								}
+							},
+							{
+								selector: 'edge',
+								style: {
+									'curve-style': 'bezier',
+									'background-color': '#3a7ecf',
+									'target-arrow-shape': 'triangle',
+									'line-color': 'blue',
+									'target-arrow-color': 'blue',
+									'opacity': 0.5
+								},
+							},
+					],
+
+					elements: {
+						nodes: [
+							{ data: { id: 'api-1', weight: 1} },
+							{ data: { id: 'v2', weight: 2} },
+							{ data: { id: 'v3', weight: 3} },
+							{ data: { id: 'v4', weight: 4} },
+							{ data: { id: 'v5', weight: 5} },
+							{ data: { id: 'v6', weight: 6} },
+							{ data: { id: 'v7', weight: 7} },
+							{ data: { id: 'v8', weight: 7} },
+							{ data: { id: 'v9', weight: 7} },
+							{ data: { id: 'v10', weight: 7} },
+							{ data: { id: 'v11', weight: 7} },
+							{ data: { id: 'v12', weight: 7} },
+							{ data: { id: 'v13', weight: 7} },
+							{ data: { id: 'v14', weight: 7} },
+							{ data: { id: 'v15', weight: 7} }
+						],
+						edges: [
+							{ data: { source: 'api-1', target: 'v2'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v4'} },
+							{ data: { source: 'api-1', target: 'v5'} },
+							{ data: { source: 'v2', target: 'v4'} },
+							{ data: { source: 'v2', target: 'v6'} },
+							{ data: { source: 'v3', target: 'v4'} },
+							{ data: { source: 'v3', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v5'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v11', target: 'v10'} },
+							{ data: { source: 'v10', target: 'v11'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v9', target: 'v9'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v4', target: 'v7'} },
+							{ data: { source: 'v8', target: 'v4'} },
+							{ data: { source: 'v8', target: 'v4'} },
+							{ data: { source: 'v8', target: 'v4'} },
+							{ data: { source: 'v8', target: 'v4'} },
+							{ data: { source: 'v8', target: 'v4'} }
+						]
+					}
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="cy"></div>
+
+	</body>
+
+</html>
